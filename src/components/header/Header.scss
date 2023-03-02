@@ -1,0 +1,12 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  padding: 2rem;
+  background-color: transparent;
+
+  &-logo {
+    width: 150px;
+  }
+}

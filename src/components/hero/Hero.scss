@@ -1,0 +1,40 @@
+.Hero {
+  position: relative;
+  padding: 2rem;
+  min-height: 60vh;
+
+  align-items: flex-start;
+
+  background: url('../../assets/test.jpg');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+
+  &-heading {
+    font-size: 4rem;
+    font-family: 'roboto-bold';
+    text-transform: capitalize;
+    letter-spacing: 1.15px;
+    // -webkit-text-stroke: 1px black;
+  }
+
+  &-buttons {
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  &-description {
+    max-width: 400px;
+  }
+
+  &-blur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    box-shadow: -6px -16px 116px 76px rgba(0,0,0,1);
+    -webkit-box-shadow: -6px -16px 116px 76px rgba(0,0,0,1);
+    -moz-box-shadow: -6px -16px 116px 76px rgba(0,0,0,1);
+  }
+}
