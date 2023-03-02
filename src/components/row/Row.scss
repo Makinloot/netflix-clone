@@ -1,0 +1,31 @@
+.Row {
+  padding: 2rem;
+
+  &.small {
+    .slide {
+      img {
+        height: 150px;
+      }
+    }
+  }
+
+  h3 {
+    font-family: "bebas";
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+  }
+
+  .swiper {
+    margin: 1rem 0;
+    border: 1px solid;
+    user-select: none;
+  }
+
+  .slide {
+    img {
+      height: 280px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
