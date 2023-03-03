@@ -5,6 +5,11 @@
   z-index: 1000000;
   padding: 2rem;
   background-color: transparent;
+  transition: .3s;
+
+  &.active {
+    background-color: black;
+  }
 
   &-logo {
     width: 150px;
