@@ -1,5 +1,8 @@
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
+
+import notFound from "../../assets/not-found.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,118 +14,61 @@ import "./Row.scss";
 const Row: React.FC<{
   heading: string;
   className: string;
-}> = ({ heading, className }) => {
+  fetchUrl: string;
+}> = ({ heading, className, fetchUrl }) => {
+  const [movieData, setMovieData] = useState<any[]>([]);
+  const [transition, setTransition] = useState<boolean>(false);
+
+  const handleFetch = async () => {
+    const res = await fetch(`https://api.themoviedb.org/3${fetchUrl}`);
+    const data = await res.json();
+
+    setMovieData(data.results);
+  };
+
+  useEffect(() => {
+    handleFetch();
+    setTimeout(() => {
+      setTransition(true);
+    }, 2000);
+  }, []);
+
   return (
     <section className={className}>
       <h3>{heading}</h3>
-      <div>
+      <div className="Row-items">
         <Swiper
-          slidesPerView={className === 'Row' ? 9.4 : 7.4}
-          spaceBetween={5}
+          slidesPerView={className === "Row" ? 7.4 : 9.8}
+          spaceBetween={10}
           freeMode={true}
           modules={[FreeMode, Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="slide">
-              <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
-            </div>
-          </SwiperSlide>
+          {movieData &&
+            movieData.map((movie) => (
+              <SwiperSlide
+                className={transition ? "slide-swiper active" : "slide-swiper"}
+                key={movie.id}
+              >
+                <div className="slide">
+                  {className === "Row" ? (
+                    <img
+                      src={
+                        `https://image.tmdb.org/t/p/original/${movie?.poster_path}` ||
+                        `${notFound}`
+                      }
+                    />
+                  ) : (
+                    <img
+                      src={
+                        `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}` ||
+                        `${notFound}`
+                      }
+                    />
+                  )}
+                </div>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </section>
