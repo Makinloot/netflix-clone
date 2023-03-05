@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 // media & styles
 import "./Header.scss";
 import logo from "../../assets/logo.png";
-import user from '../../assets/user-test.png'
+import user from "../../assets/user-test.png";
 
+import Navbar from "./Navbar";
+import UserImg from "./UserImg";
+import Button from "../button/Button";
 
-const Header = () => {
+const Header: React.FC<{
+  landing: boolean;
+}> = ({ landing }) => {
   const [showHeader, setShowHeader] = useState<boolean>(false);
 
   const handleHeader = () => {
@@ -19,28 +24,25 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={showHeader ? "Header active" : "Header"}>
+    <header
+      className={
+        !landing && showHeader
+          ? "Header active"
+          : "Header" && landing
+          ? "Header landing"
+          : "Header"
+      }
+    >
       <div className="container">
         <div className="Header-wrapper flex-row">
           <div className="flex-row">
-            <div className="Header-logo">
+            <div className={landing ? "Header-logo landing" : "Header-logo"}>
               <img src={logo} alt="netflix logo" />
             </div>
-            <nav className="Header-nav flex-row">
-              <li>
-                <a href="/">movies</a>
-              </li>
-              <li>
-                <a href="/">movies</a>
-              </li>
-              <li>
-                <a href="/">movies</a>
-              </li>
-            </nav>
+            {!landing && <Navbar />}
           </div>
-          <div className="Header-user">
-            <img src={user} alt="user" />
-          </div>
+          {!landing && <UserImg img={user} />}
+          {landing && <Button value="sign in" className="btn-auth" />}
         </div>
       </div>
     </header>

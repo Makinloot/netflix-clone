@@ -9,6 +9,11 @@
   background: linear-gradient(180deg, rgba(4,0,36,1) 0%, rgba(9,9,121,0) 100%);
   transition: .3s;
 
+  &.landing {
+    position: absolute;
+    background: transparent;
+  }
+
   &.active {
     background-color: black;
   }
@@ -19,6 +24,10 @@
 
   &-logo {
     max-width: 92px;
+
+    &.landing {
+      max-width: 167px;
+    }
 
     img {
       max-width: 100%;

@@ -18,3 +18,10 @@
     background-color: #000000a1;
   }
 }
+
+.btn-auth {
+  @extend %btn;
+  padding: 7px 17px;
+  background-color: #e50914;
+  font-size: 1rem;
+}

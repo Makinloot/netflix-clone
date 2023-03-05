@@ -1,3 +1,5 @@
+// pages
+import Landing from "./pages/Landing"
 
 // components
 import Header from "./components/header/Header"
@@ -7,8 +9,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Main />
+      {/* <Header landing={false} /> */}
+      {/* <Main /> */}
+      <Landing />
     </div>
   )
 }
