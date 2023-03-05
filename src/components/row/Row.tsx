@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
+import axios from "axios";
 
 import notFound from "../../assets/not-found.png";
+
+// types
+import { MovieResultTypes } from "../../types";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,14 +20,11 @@ const Row: React.FC<{
   className: string;
   fetchUrl: string;
 }> = ({ heading, className, fetchUrl }) => {
-  const [movieData, setMovieData] = useState<any[]>([]);
+  const [movieData, setMovieData] = useState<MovieResultTypes[] | null>(null);
   const [transition, setTransition] = useState<boolean>(false);
 
-  const handleFetch = async () => {
-    const res = await fetch(`https://api.themoviedb.org/3${fetchUrl}`);
-    const data = await res.json();
-
-    setMovieData(data.results);
+  const handleFetch = () => {
+    axios.get(`https://api.themoviedb.org/3${fetchUrl}`).then(res => setMovieData(res.data.results))
   };
 
   useEffect(() => {
