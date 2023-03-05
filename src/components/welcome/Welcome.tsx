@@ -4,7 +4,7 @@ import './Welcome.scss'
 
 const Welcome = () => {
   return (
-    <div className='Welcome flex-col' style={{background: `url(${BG})`}}>
+    <section className='Welcome flex-col' style={{background: `url(${BG})`}}>
       <div className="bg-blur"></div>
       <div className="container">
         <div className="Welcome-wrapper flex-col">
@@ -14,7 +14,7 @@ const Welcome = () => {
         </div>
         <hr />
       </div>
-    </div>
+    </section>
   )
 }
 
