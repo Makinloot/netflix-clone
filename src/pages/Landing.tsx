@@ -5,8 +5,12 @@ import Welcome from "../components/welcome/Welcome";
 import tv from "../assets/tv.png";
 import devices from "../assets/devices.png";
 import mobile from "../assets/mobile.jpg";
+import kids from "../assets/kids.png";
 
 const Landing = () => {
+
+  console.log(kids)
+
   return (
     <div className="Landing">
       <div className="container">
@@ -32,6 +36,11 @@ const Landing = () => {
               img={devices}
               video="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
               videoClass="devices"
+            />
+            <About
+              title="Create profiles for kids."
+              text="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
+              img={kids}
             />
           </main>
         </div>

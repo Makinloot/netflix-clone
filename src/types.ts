@@ -20,3 +20,13 @@ interface MovieDataTypes {
   total_pages: number
   total_results: number
 }
+
+// about section types
+export type AboutProps = {
+  title: string;
+  text: string;
+  img: string;
+  video?: string;
+  videoClass?: string;
+  downloading?: boolean;
+}

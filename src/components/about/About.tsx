@@ -1,19 +1,26 @@
 import Video from "./Video";
-
-import "./About.scss";
 import Downloading from "./Downloading";
 
-const About: React.FC<{
-  title: string;
-  text: string;
-  img: string;
-  video?: string;
-  videoClass?: string;
-  downloading?: boolean;
-}> = ({ title, text, img, video, videoClass, downloading }) => {
+import { AboutProps } from "../../types";
+
+import "./About.scss";
+
+const About: React.FC<AboutProps> = ({
+  title,
+  text,
+  img,
+  video,
+  videoClass,
+  downloading,
+}) => {
   return (
     <section className="About flex-row">
       {downloading && <Downloading img={img} />}
+      {img === "/src/assets/kids.png" && (
+        <div className="About-img">
+          <img src={img} />
+        </div>
+      )}
       <div>
         <h2>{title}</h2>
         <p>{text}</p>
