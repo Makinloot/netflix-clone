@@ -1,6 +1,32 @@
 .Row {
   padding: 20px;
 
+  &.small {
+    // swiper navigation button styles for small row
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 40px;
+
+      &:hover {
+        &::after {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .swiper-button-next {
+      &::after {
+        content: '>';
+        font-size: 2rem;
+      }
+    }
+    .swiper-button-prev {
+      &::after {
+        content: '<';
+        font-size: 2rem;
+      }
+    }
+  }
+
   h3 {
     margin: 0 0 1rem;
     font-family: "bebas";
@@ -28,13 +54,62 @@
       }
     }
 
+    // swiper navigation button styles
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      z-index: 1000;
+      height: 100%;
+      width: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'bebas';
+      background-color: rgba(0, 0, 0, 0.301);
+      transition: 450ms;
+
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.501);
+        
+        &::after {
+          font-size: 5.5rem;
+        }
+      }
+
+      &::after {
+        transition: 450ms;
+      }
+    }
+    .swiper-button-next {
+      top: 0;
+      right: 0;
+
+      &::after {
+        content: '>';
+        font-size: 5rem;
+      }
+    }
+    .swiper-button-prev {
+      top: 0 ;
+      left: 0;
+
+      &::after {
+        content: '<';
+        font-size: 5rem;
+      }
+    }
+
     img {
       position: relative;
+      z-index: 10;
       max-width: 100%;
       height: auto;
-      transition: 450ms;
-      z-index: 10;
       object-fit: contain;
+      transition: 450ms;
 
       &:hover {
         scale: 1.1;

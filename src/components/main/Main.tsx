@@ -10,10 +10,7 @@ const Main = () => {
     <main className="Main">
       <div className="container">
         <div className="Main-wrapper">
-          <Hero
-            heading="the witcher"
-            description="Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where poeple often prove more wicked than beasts."
-          />
+          <Hero />
           <Row heading="netflix originals" className="Row" fetchUrl={requests.netflixOriginals} />
           <Row heading="trending now" className="Row small" fetchUrl={requests.trending} />
           <Row heading="top rated" className="Row small" fetchUrl={requests.topRated} />

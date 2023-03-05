@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination } from "swiper";
+import { FreeMode, Navigation } from "swiper";
 import axios from "axios";
 
 import notFound from "../../assets/not-found.png";
@@ -41,8 +41,10 @@ const Row: React.FC<{
         <Swiper
           slidesPerView={className === "Row" ? 7.4 : 9.8}
           spaceBetween={10}
-          freeMode={true}
-          modules={[FreeMode, Pagination]}
+          freeMode
+          navigation
+          loop
+          modules={[FreeMode, Navigation]}
           className="mySwiper"
         >
           {movieData &&
