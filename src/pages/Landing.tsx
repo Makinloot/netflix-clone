@@ -7,6 +7,7 @@ import devices from "../assets/devices.png";
 import mobile from "../assets/mobile.jpg";
 import kids from "../assets/kids.png";
 import Faq from "../components/faq/Faq";
+import Footer from "../components/footer/Footer";
 
 const Landing = () => {
 
@@ -45,6 +46,7 @@ const Landing = () => {
             />
             <Faq />
           </main>
+          <Footer />
         </div>
       </div>
     </div>

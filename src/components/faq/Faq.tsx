@@ -6,7 +6,7 @@ import { faqData } from "../../data";
 
 const Faq = () => {
   return (
-    <div className="Faq flex-col">
+    <section className="Faq flex-col">
       <h2>Frequently Asked Questions</h2>
       <ul className="Faq-list">
         {faqData.map((faq) => (
@@ -18,7 +18,7 @@ const Faq = () => {
         ))}
       </ul>
       <hr />
-    </div>
+    </section>
   );
 };
 
