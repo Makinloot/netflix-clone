@@ -24,7 +24,8 @@ const Row: React.FC<{
   const [transition, setTransition] = useState<boolean>(false);
 
   const handleFetch = () => {
-    axios.get(`https://api.themoviedb.org/3${fetchUrl}`).then(res => setMovieData(res.data.results))
+    const randomNumber = Math.floor(Math.random() * 5) + 1
+    axios.get(`https://api.themoviedb.org/3${fetchUrl}&page=${randomNumber}`).then(res => setMovieData(res.data.results))
   };
 
   useEffect(() => {
@@ -43,7 +44,6 @@ const Row: React.FC<{
           spaceBetween={10}
           freeMode
           navigation
-          loop
           modules={[FreeMode, Navigation]}
           className="mySwiper"
         >

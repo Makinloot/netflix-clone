@@ -17,7 +17,6 @@ const Hero = () => {
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 20)
     axios.get(`https://api.themoviedb.org/3${requests.netflixOriginals}`).then(res => {
-      console.log(res.data)
       setMovie(res.data.results[randomNumber])
     })
   }, [])

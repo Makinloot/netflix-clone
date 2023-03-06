@@ -58,3 +58,19 @@
     -moz-box-shadow: 0px -26px 31px 99px rgba(0, 0, 0, 0.5);
   }
 }
+
+.Auth {
+  position: relative;
+  
+  .Welcome {
+    min-height: 100vh;
+
+    &-wrapper {
+      display: none;
+    }
+
+    hr {
+      display: none;
+    }
+  }
+}

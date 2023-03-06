@@ -8,7 +8,7 @@ const requests = {
   comedy: `/discover/movie?api_key=${API_KEY}&with_genres=35`,
   horror: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
   fantasy: `/discover/movie?api_key=${API_KEY}&with_genres=14`,
-  history: `/discover/movie?api_key=${API_KEY}&with_genres=36`,
+  animation: `/discover/movie?api_key=${API_KEY}&with_genres=16`,
 }
 
 export default requests

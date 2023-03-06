@@ -16,9 +16,9 @@ const Main = () => {
           <Row heading="top rated" className="Row small" fetchUrl={requests.topRated} />
           <Row heading="action" className="Row small" fetchUrl={requests.action} />
           <Row heading="comedy" className="Row small" fetchUrl={requests.comedy} />
+          <Row heading="animation" className="Row small" fetchUrl={requests.animation} />
           <Row heading="horror" className="Row small" fetchUrl={requests.horror} />
           <Row heading="fantasy" className="Row small" fetchUrl={requests.fantasy} />
-          <Row heading="history" className="Row small" fetchUrl={requests.history} />
         </div>
       </div>
     </main>
