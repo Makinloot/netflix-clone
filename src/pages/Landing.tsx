@@ -6,6 +6,7 @@ import tv from "../assets/tv.png";
 import devices from "../assets/devices.png";
 import mobile from "../assets/mobile.jpg";
 import kids from "../assets/kids.png";
+import Faq from "../components/faq/Faq";
 
 const Landing = () => {
 
@@ -42,6 +43,7 @@ const Landing = () => {
               text="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
               img={kids}
             />
+            <Faq />
           </main>
         </div>
       </div>

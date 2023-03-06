@@ -30,3 +30,10 @@ export type AboutProps = {
   videoClass?: string;
   downloading?: boolean;
 }
+
+// faq types
+export type FaqProps = {
+  question: string;
+  answer: string;
+  answer2?: string;
+}
