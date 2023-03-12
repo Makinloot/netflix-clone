@@ -1,15 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
-import { FIREBASE_KEY, FIREBASE_APP_ID } from "../../key";
-
 const firebaseConfig = {
-  apiKey: FIREBASE_KEY,
-  authDomain: "netflix-clone-80d7f.firebaseapp.com",
-  projectId: "netflix-clone-80d7f",
-  storageBucket: "netflix-clone-80d7f.appspot.com",
-  messagingSenderId: "507664098024",
-  appId: FIREBASE_APP_ID
+  apiKey: import.meta.env.VITE_FIREBASE_API,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
