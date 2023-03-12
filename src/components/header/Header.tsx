@@ -43,7 +43,16 @@ const Header: React.FC<{
             {!landing && <Navbar />}
           </div>
           {!landing && <UserImg img={user} />}
-          {landing && <Link to="auth"><Button value="sign in" className="btn-auth" /></Link>}
+          {landing && (
+            <div className="flex-row" style={{ gap: ".5rem" }}>
+              <Link to="/signin">
+                <Button value="sign in" className="btn-auth" />
+              </Link>
+              <Link to="/signup">
+                <Button value="sign up" className="btn-auth" />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </header>

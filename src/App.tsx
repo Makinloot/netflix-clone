@@ -15,12 +15,12 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/auth" element={<Auth />} />
+            <Route path="/browse" element={<Browse />} />
+            <Route path="/signup" element={<Auth signup={true} />} />
+            <Route path="/signin" element={<Auth signup={false} />} />
+            {/* <Route path="/auth" element={<Auth />} /> */}
           </Routes>
         </AuthProvider>
-        {/* <Browse /> */}
-        {/* <Landing /> */}
-        {/* <Auth /> */}
       </div>
     </Router>
   )

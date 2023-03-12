@@ -1,3 +1,5 @@
+import googleIcon from '../../assets/google.png'
+
 import './Button.scss'
 
 const Button: React.FC<{
@@ -5,7 +7,10 @@ const Button: React.FC<{
   className: string;
 }> = ({ value, className}) => {
   return (
-    <button className={className}>{value}</button>
+    <button className={className} type={className === 'btn-google' ? 'button' : 'submit'}>
+      {className === 'btn-google' && <img src={googleIcon} /> }
+      {value}
+    </button>
   )
 }
 

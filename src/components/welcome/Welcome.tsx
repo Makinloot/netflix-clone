@@ -11,7 +11,7 @@ const Welcome = () => {
         <div className="Welcome-wrapper flex-col">
           <p>Unlimited movies, TV shows, and more.</p>
           <p>Watch anywhere. Cancel anytime.</p>
-          <p>Ready to watch? <Link to="/auth">Log in</Link> with your email to start your membership.</p>
+          <p>Ready to watch? <Link to="/signup">Sign up</Link> with your email to start your membership.</p>
         </div>
         <hr />
       </div>

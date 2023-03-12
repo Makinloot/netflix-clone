@@ -1,6 +1,6 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 
 import Button from "../button/Button";
@@ -21,13 +21,13 @@ const AuthForm: React.FC<{
     useRef<HTMLInputElement>(null),
   ];
 
-  const { handleSignup, handleLogin } = useAuth();
+  const { handleSignup, handleLogin, currentUser, handleGmailAuth } = useAuth();
 
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("")
   const [loading, setLoading] = useState<boolean>(false);
 
-  console.log(authType);
+  const navigate = useNavigate()
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -49,6 +49,7 @@ const AuthForm: React.FC<{
         setSuccessMsg("Account was successfully created")
       } else {
         await handleLogin(emailValue, pswValue)
+        navigate('/browse')
       }
     } catch (error: any) {
       if (error.code === "auth/user-not-found") setError("User not found.");
@@ -78,6 +79,11 @@ const AuthForm: React.FC<{
     );
   };
 
+  // if user logged in
+  useEffect(() => {
+    if(currentUser) navigate('/browse')
+  }, [currentUser])
+
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
       <h3>{authType}</h3>
@@ -95,13 +101,16 @@ const AuthForm: React.FC<{
       {handleInputs()}
       <div className="change-auth-component">
         {authType === 'sign up' ?
-          <p>Already have an account ? <Link to="#">Sign in</Link></p>
+          <p>Already have an account ? <Link to="/signin">Sign in</Link></p>
           :
-          <p>Don't have an account ? <Link to="#">Sign up</Link></p>
+          <p>Don't have an account ? <Link to="/signup">Sign up</Link></p>
         }
       </div>
-      <div className={loading ? "auth-form-btn-wrapper loading" : "auth-form-btn-wrapper"}>
+      <div onClick={() => handleGmailAuth} className={loading ? "auth-form-btn-wrapper loading" : "auth-form-btn-wrapper"}>
         <Button value={authType} className="btn-auth" />
+      </div>
+      <div onClick={handleGmailAuth} className={loading ? "auth-form-btn-wrapper loading" : "auth-form-btn-wrapper"}>
+        <Button value="Sign in with Google" className="btn-google" />
       </div>
     </form>
   );
