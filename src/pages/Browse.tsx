@@ -11,13 +11,15 @@ const Browse = () => {
   const navigate = useNavigate()
   const { currentUser } = useAuth();
 
+  console.log(currentUser)
+
   useEffect(() => {
     if(!currentUser) navigate('/')
   }, [currentUser])
 
   return (
     <>
-      <Header landing={false} />
+      <Header landing={false} userImg={currentUser?.photoURL} />
       <Main />
       <Footer />
     </>

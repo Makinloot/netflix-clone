@@ -11,7 +11,8 @@ import Button from "../button/Button";
 
 const Header: React.FC<{
   landing: boolean;
-}> = ({ landing }) => {
+  userImg: string;
+}> = ({ landing, userImg }) => {
   const [showHeader, setShowHeader] = useState<boolean>(false);
 
   const handleHeader = () => {
@@ -42,9 +43,9 @@ const Header: React.FC<{
             </div>
             {!landing && <Navbar />}
           </div>
-          {!landing && <UserImg img={user} />}
+          {!landing && <UserImg img={userImg} />}
           {landing && (
-            <div className="flex-row" style={{ gap: ".5rem" }}>
+            <div className="flex-row btn-wrapper" style={{ gap: ".5rem" }}>
               <Link to="/signin">
                 <Button value="sign in" className="btn-auth" />
               </Link>

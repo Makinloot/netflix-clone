@@ -13,7 +13,7 @@ const Landing = () => {
 
   return (
     <>
-      <Header landing={true} />
+      <Header landing={true} userImg="" />
       <main>
         <Welcome />
         <About

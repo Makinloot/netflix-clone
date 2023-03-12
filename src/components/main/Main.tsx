@@ -6,6 +6,7 @@ import requests from "../../requests";
 import "./Main.scss";
 
 const Main = () => {
+
   return (
     <main className="Main">
       <div className="container">

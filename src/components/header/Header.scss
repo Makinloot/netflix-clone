@@ -20,6 +20,12 @@
 
   &-wrapper {
     justify-content: space-between !important;
+
+    @media (max-width: 480px) {
+      flex-wrap: wrap;
+      justify-content: center !important;
+      gap: 15px;
+    }
   }
 
   &-logo {
@@ -94,6 +100,10 @@
         pointer-events: all;
       }
     }
+  }
+
+  .btn-wrapper {
+
   }
 }
 
