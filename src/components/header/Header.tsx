@@ -36,12 +36,12 @@ const Header: React.FC<{
       }
     >
       <div className="container">
-        <div className="Header-wrapper flex-row">
+        <div className={landing ? "Header-wrapper flex-row landing" : "Header-wrapper flex-row"}>
           <div className="flex-row">
             <div className={landing ? "Header-logo landing" : "Header-logo"}>
               <img src={logo} alt="netflix logo" />
             </div>
-            {!landing && <Navbar />}
+            {/* {!landing && <Navbar />} */}
           </div>
           {!landing && <UserImg img={userImg} />}
           {landing && (

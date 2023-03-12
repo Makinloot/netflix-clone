@@ -40,7 +40,21 @@ const Row: React.FC<{
       <h3>{heading}</h3>
       <div className="Row-items">
         <Swiper
-          slidesPerView={className === "Row" ? 7.4 : 9.8}
+        slidesPerView={className === "Row" ? 2.2 : 2.5}
+          breakpoints={{
+            480: {
+              width: 480,
+              slidesPerView: className === "Row" ? 3.4 : 2.8
+            },
+            768: {
+              width: 768,
+              slidesPerView: className === "Row" ? 4.4 : 2.8
+            },
+            1024: {
+              width: 1024,
+              slidesPerView: className === "Row" ? 7.4 : 5.8
+            }
+          }}
           spaceBetween={10}
           freeMode
           navigation
