@@ -1,4 +1,4 @@
-import { FaqProps } from "./types";
+import { FaqProps, AuthInputs } from "./types";
 
 export const faqData: FaqProps[] = [
   {
@@ -36,5 +36,36 @@ export const faqData: FaqProps[] = [
       "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.",
     answer2:
       "Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.",
+  },
+];
+
+export const registerInputData: AuthInputs[] = [
+  {
+    id: "email",
+    type: "email",
+    label: "email",
+  },
+  {
+    id: "password",
+    type: "password",
+    label: "password",
+  },
+  {
+    id: "confirm-password",
+    type: "password",
+    label: "confirm password",
+  },
+];
+
+export const loginInputData: AuthInputs[] = [
+  {
+    id: "email",
+    type: "email",
+    label: "email",
+  },
+  {
+    id: "password",
+    type: "password",
+    label: "password",
   },
 ];

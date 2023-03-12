@@ -9,8 +9,9 @@ const Faq = () => {
     <section className="Faq flex-col">
       <h2>Frequently Asked Questions</h2>
       <ul className="Faq-list">
-        {faqData.map((faq) => (
+        {faqData.map((faq, i) => (
           <FaqItem
+            key={i}
             question={faq.question}
             answer={faq.answer}
             answer2={faq.answer2}

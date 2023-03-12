@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // media & styles
 import "./Header.scss";
 import logo from "../../assets/logo.png";
@@ -42,7 +43,7 @@ const Header: React.FC<{
             {!landing && <Navbar />}
           </div>
           {!landing && <UserImg img={user} />}
-          {landing && <Button value="sign in" className="btn-auth" />}
+          {landing && <Link to="auth"><Button value="sign in" className="btn-auth" /></Link>}
         </div>
       </div>
     </header>

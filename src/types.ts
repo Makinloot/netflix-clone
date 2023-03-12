@@ -37,3 +37,10 @@ export type FaqProps = {
   answer: string;
   answer2?: string;
 }
+
+// auth input types
+export interface AuthInputs {
+  id: string;
+  label: string;
+  type: string;
+}
