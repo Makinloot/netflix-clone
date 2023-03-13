@@ -53,10 +53,6 @@
       font-size: 1.125rem;
       outline: none;
       
-      // &:focus {
-      //   border-bottom: 2px solid blue;
-      //   margin-bottom: -2px;
-      // }
     }
 
     ::placeholder {
@@ -89,5 +85,11 @@
     a {
       text-decoration: underline;
     }
+  }
+
+  .forgot-password {
+    margin: 1rem 0 0;
+    text-align: center;
+    text-decoration: underline;
   }
 }

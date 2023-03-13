@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/AuthContext"
 import Landing from "./pages/Landing"
 import Browse from "./pages/Browse"
 import Auth from "./pages/Auth"
+import ResetPsw from "./pages/ResetPsw"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/browse" element={<Browse />} />
             <Route path="/signup" element={<Auth signup={true} />} />
             <Route path="/signin" element={<Auth signup={false} />} />
+            <Route path="/reset-password" element={<ResetPsw />} />
             {/* <Route path="/auth" element={<Auth />} /> */}
           </Routes>
         </AuthProvider>

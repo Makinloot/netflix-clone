@@ -1,31 +1,9 @@
 .Row {
   padding: 20px;
 
-  &.small {
-    // swiper navigation button styles for small row
-    .swiper-button-next,
-    .swiper-button-prev {
-      width: 40px;
-
-      &:hover {
-        &::after {
-          font-size: 2.5rem;
-        }
-      }
-    }
-    .swiper-button-next {
-      &::after {
-        content: '>';
-        font-size: 2rem;
-      }
-    }
-    .swiper-button-prev {
-      &::after {
-        content: '<';
-        font-size: 2rem;
-      }
-    }
-  }
+  // &.small {
+  //   // swiper navigation button styles for small row
+  // }
 
   h3 {
     margin: 0 0 1rem;
@@ -58,16 +36,18 @@
     .swiper-button-prev,
     .swiper-button-next {
       position: absolute;
+      top: 50% !important;
+      transform: translateY(-50%);
       z-index: 1000;
-      height: 100%;
-      width: 70px;
+      height: 50%;
+      width: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'bebas';
-      background-color: rgba(0, 0, 0, 0.301);
       transition: 450ms;
       cursor: pointer;
+      opacity: .7;
 
       &.swiper-button-disabled {
         opacity: 0;
@@ -75,10 +55,6 @@
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.501);
-        
-        &::after {
-          font-size: 5.5rem;
-        }
       }
 
       &::after {
@@ -90,8 +66,7 @@
       right: 0;
 
       &::after {
-        content: '>';
-        font-size: 5rem;
+        content: url('../../assets/next.png');
       }
     }
     .swiper-button-prev {
@@ -99,8 +74,8 @@
       left: 0;
 
       &::after {
-        content: '<';
-        font-size: 5rem;
+        content: url('../../assets/next.png');
+        transform: rotate(-180deg);
       }
     }
 

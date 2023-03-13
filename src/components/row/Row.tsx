@@ -44,6 +44,7 @@ const Row: React.FC<{
           setTrailer(urlParams.get("v"));
         })
         .catch((err: any) => {
+          console.log(err)
           alert("trailer not avaliable");
         });
     }

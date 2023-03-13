@@ -17,6 +17,7 @@ const Browse = () => {
     if(!currentUser) navigate('/')
   }, [currentUser])
 
+
   return (
     <>
       <Header landing={false} userImg={currentUser?.photoURL} />

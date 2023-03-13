@@ -46,4 +46,6 @@ export interface AuthInputs {
   id: string;
   label: string;
   type: string;
+  pattern?: string;
+  error_msg?: string;
 }
