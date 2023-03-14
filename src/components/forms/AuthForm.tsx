@@ -73,6 +73,7 @@ const AuthForm: React.FC<{
           label={input.label}
           pattern={input.pattern}
           type={input.type}
+          error_msg={input.error_msg}
           refData={refData[i]}
           key={i}
         />

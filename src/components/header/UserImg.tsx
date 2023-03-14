@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 import defaultUser from '../../assets/default-user.jpg'
 
@@ -29,6 +30,7 @@ const UserImg: React.FC<{
           show ? "user-details flex-col active" : "user-details flex-col"
         }
       >
+        <li className="flex-row"><Link to="/account">Update account</Link></li>
         <li className="flex-row" onClick={handleSignout}>Sign out of Netflix</li>
       </ul>
     </div>

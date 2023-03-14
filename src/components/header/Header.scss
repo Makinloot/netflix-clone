@@ -85,7 +85,7 @@
       top: calc(100% + 4px);
       right: 0;
       z-index: 10000;
-      padding: 1rem;
+      // padding: 1rem 0rem;
       width: 200px;
       background-color: black;
       pointer-events: none;
@@ -96,6 +96,17 @@
       li {
         width: 100%;
         cursor: pointer;
+        // margin-top: .5rem;
+        padding: 1rem 0;
+        transition: 350ms;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:hover {
+          background-color: #4d4d4d;
+        }
       }
       
       &.active {

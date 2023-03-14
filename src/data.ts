@@ -44,20 +44,18 @@ export const registerInputData: AuthInputs[] = [
     id: "email",
     type: "email",
     label: "email",
-    error_msg: "Please enter valid email."
   },
   {
     id: "password",
     type: "password",
     label: "password",
     pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$",
-    error_msg: "Password must be at least 1 capital letter and 1 digit, minimum 8 characters."
+    error_msg: "Password must be at least 1 capital letter, 1 digit and minimum 8 characters."
   },
   {
     id: "confirm-password",
     type: "password",
     label: "confirm password",
-    error_msg: "Passwords do not match"
   },
 ];
 

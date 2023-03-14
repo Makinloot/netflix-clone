@@ -1,5 +1,4 @@
 import { auth, googleProvider } from "../config/firebase";
-import firebase from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -9,9 +8,9 @@ import {
   signOut,
   signInWithPopup,
   sendPasswordResetEmail,
+  updateEmail
 } from "firebase/auth";
 import React, { useContext, useState, useEffect } from "react";
-import { redirect } from "react-router-dom";
 
 interface ValueTypes {
   currentUser: User | null | undefined;
@@ -20,6 +19,7 @@ interface ValueTypes {
   handleGmailAuth: () => Promise<UserCredential>;
   handleSignout: () => Promise<void>;
   handleResetPsw: (email: string) => Promise<void>;
+  handleUpdEmail: (email: string) => Promise<void>;
 }
 
 const AuthContext = React.createContext<ValueTypes | any>(null);
@@ -29,7 +29,7 @@ export function useAuth() {
 }
 
 export const AuthProvider: React.FC<any> = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState<User | null>();
+  const [currentUser, setCurrentUser] = useState<User | any>();
   const [loading, setLoading] = useState<boolean>(true);
 
   // sign up user
@@ -54,10 +54,13 @@ export const AuthProvider: React.FC<any> = ({ children }) => {
 
   // reset password
   const handleResetPsw = (email: string) => {
-    // return sendPasswordResetEmail(auth, email)
-    console.log(email)
     return sendPasswordResetEmail(auth, email);
   };
+
+  // update email
+  const handleUpdEmail = (email: string) => {
+    return updateEmail(currentUser, email)
+  }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -75,6 +78,7 @@ export const AuthProvider: React.FC<any> = ({ children }) => {
     handleGmailAuth,
     handleSignout,
     handleResetPsw,
+    handleUpdEmail,
   };
 
   return (

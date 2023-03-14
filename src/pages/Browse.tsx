@@ -20,7 +20,7 @@ const Browse = () => {
 
   return (
     <>
-      <Header landing={false} userImg={currentUser?.photoURL} />
+      <Header landing={false} userImg={currentUser && currentUser.photoURL} />
       <Main />
       <Footer />
     </>

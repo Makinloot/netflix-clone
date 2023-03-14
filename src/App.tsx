@@ -1,15 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { auth } from "./config/firebase"
-import { AuthProvider } from "./context/AuthContext"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 
 // pages
-import Landing from "./pages/Landing"
-import Browse from "./pages/Browse"
-import Auth from "./pages/Auth"
-import ResetPsw from "./pages/ResetPsw"
+import Landing from "./pages/Landing";
+import Browse from "./pages/Browse";
+import Auth from "./pages/Auth";
+import ResetPsw from "./pages/ResetPsw";
 
 function App() {
-
   return (
     <Router>
       <div className="App">
@@ -20,12 +18,11 @@ function App() {
             <Route path="/signup" element={<Auth signup={true} />} />
             <Route path="/signin" element={<Auth signup={false} />} />
             <Route path="/reset-password" element={<ResetPsw />} />
-            {/* <Route path="/auth" element={<Auth />} /> */}
           </Routes>
         </AuthProvider>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
