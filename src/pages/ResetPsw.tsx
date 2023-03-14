@@ -1,4 +1,4 @@
-import ResetPswForm from "../components/login/ResetPswForm"
+import ResetPswForm from "../components/forms/ResetPswForm"
 import Welcome from "../components/welcome/Welcome"
 
 

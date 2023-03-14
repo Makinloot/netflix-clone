@@ -1,5 +1,5 @@
 import Welcome from "../components/welcome/Welcome";
-import AuthForm from "../components/login/AuthForm";
+import AuthForm from "../components/forms/AuthForm";
 
 import { registerInputData, loginInputData } from "../data";
 
