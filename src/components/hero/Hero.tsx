@@ -24,10 +24,10 @@ const Hero = () => {
   return (
     <section className="Hero flex-col" style={{background: `url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`}}>
       <h2 className="Hero-heading">{movie?.name}</h2>
-      <div className="Hero-buttons flex-row">
+      {/* <div className="Hero-buttons flex-row">
         <Button value="play" className="btn-dark" />
         <Button value="my list" className="btn-dark"/>
-      </div>
+      </div> */}
       <p className="Hero-description">{movie?.overview}</p>
       <div className="Hero-blur"></div>
     </section>
